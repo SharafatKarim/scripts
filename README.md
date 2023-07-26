@@ -27,3 +27,6 @@ Same as `avif`, just the `output_format` is set to `webp`. Use the following lin
 ```
 curl -s https://raw.githubusercontent.com/SharafatKarim/scripts/main/BatchCovertToWebp.sh | bash
 ```
+
+> Later, you can remove `png, jpg and jpeg` files using this script!
+> ``` curl -s https://raw.githubusercontent.com/SharafatKarim/scripts/main/BatchRemoveOriginal(PNG%E2%81%84JPG%E2%81%84JPEG).sh | bash ```
