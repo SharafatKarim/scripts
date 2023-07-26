@@ -1,11 +1,22 @@
 #!/bin/bash
+
+# Color support
 Color_Off='\033[0m'       # Text Reset
 Red='\033[0;31m'          # Red
 Green='\033[0;32m'        # Green
 
-# User variables
+# User variables [EDITABLE]
 input_format=("jpg" "jpeg" "png")
 output_format="webp"
+
+# Conversation function
+function conversation() {
+    local input=$1
+    local output=$2
+
+    # modify the following line for extension of this script! [EDITABLE]
+    magick "$input" "$output"
+}
 
 # Image number counting
 count=0
@@ -17,7 +28,7 @@ function check_for_specific_type() {
         if [ "$str" = "${item##*.}" ]; then
             (( total += 1 ))
             if [ ! -e "${item%.*}.$output_format" ]; then
-                magick "$item" "${item%.*}".$output_format
+                conversation "$item" "${item%.*}".$output_format
                 echo -e "${Green}[ ${item##*.} -> $output_format ]${Color_Off} - $item"
                 (( count += 1 ))
             else
