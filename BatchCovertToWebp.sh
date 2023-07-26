@@ -11,12 +11,6 @@ output_format="webp"
 count=0
 total=0
 
-function proceed_to_convert() {
-    magick "$1" "${1%.*}".avif
-    echo "$1"
-    echo "${1%.*}".avif
-}
-
 function check_for_specific_type() {
     local item="$1"
     for str in ${input_format[@]}; do
